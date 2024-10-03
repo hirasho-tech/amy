@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="am.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+    
+    <title>Amy's Birth DAY</title>
+</head>
+
+
+<body>
+    
+    <div class="main">
+        <nav>
+            <img src="image/rose1.png" id="rose1">
+            <h2>Amy's Birthday Site</h2>
+            <img src="image/rose1.png" id="rose2">
+        </nav>
+        <hr />
+
+        <div class="message">           
+             
+            <p>Dear Amy
+            </p>
+            <p>Happy Birthday!!
+            </p>
+            <p>May all your dreams come true on this wonderful day
+            </p>
+            <input type="button" class="click" id="button" value="Click Me!">
+                 
+        </div>
+        <div class="letter">
+                    <img src="image/letter.png" id="letter" alt="letter">
+                    <button class="js-close-img">CLOSE</button>
+        </div> 
+        <div class="haguchi"><img src="image/haguchi.png" id="haguchi"></div>
+    </div>
+
+    <script>
+        $(function(){
+            $('.message').hide();            
+            $('nav').mouseover(function(){                    
+                 $('.message').fadeIn(1000);
+
+         
+            });
+            $(function() {
+                var openImgBtn = $('.click'); //「画像を見る」
+                var openImgTarget = $('.letter'); //画像
+                var closeImgBtn = $('.js-close-img'); //「CLOSE」ボタン
+                openImgBtn.on('click', function() { //「画像を見る」ボタンを押すと
+                    openImgTarget.fadeIn(); //画像がフワッと（fadeIn）現れて
+                    openImgBtn.hide(); //「画像を見る」ボタンは消える
+                });
+                closeImgBtn.on('click', function() { //「CLOSE」ボタンを押すと
+                    openImgBtn.show(); //「画像を見る」ボタンが現れて
+                    openImgTarget.hide();　//画像は消える
+                });
+                });
+        });
+    </script>
+</body>
+</html>
